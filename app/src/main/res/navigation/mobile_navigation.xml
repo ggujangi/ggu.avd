@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_my">
+
+    <fragment
+        android:id="@+id/navigation_my"
+        android:name="com.ggu.avd.ui.my.MyFragment"
+        android:label="@string/title_my"
+        tools:layout="@layout/fragment_my" />
+
+    <fragment
+        android:id="@+id/navigation_common"
+        android:name="com.ggu.avd.ui.list.ListFragment"
+        android:label="@string/title_common"
+        tools:layout="@layout/fragment_list">
+        <argument
+            android:name="avdType"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_player"
+        android:name="com.ggu.avd.ui.list.ListFragment"
+        android:label="@string/title_player"
+        tools:layout="@layout/fragment_list">
+        <argument
+            android:name="avdType"
+            app:argType="string" />
+    </fragment>
+</navigation>
