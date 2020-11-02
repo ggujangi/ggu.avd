@@ -8,7 +8,12 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.widget.ViewPager2
 import com.ggu.avd.R
+import com.ggu.avd.databinding.FragmentMyBinding
+import com.ggu.avd.utilities.AVD_COMMON_TYPE
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MyFragment : Fragment() {
 
@@ -21,11 +26,21 @@ class MyFragment : Fragment() {
     ): View? {
         myViewModel =
                 ViewModelProvider(this).get(MyViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_my, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        myViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+
+        val binding = FragmentMyBinding.inflate(inflater, container, false)
+
+        binding.hasDrawables = false
+
+
+        binding.addBtn.setOnClickListener {
+            navigateToPlantListPage()
+        }
+        return binding.root
+    }
+
+    private fun navigateToPlantListPage() {
+        /*val direction = MyFragmentDirections.actionMyFragmentToCommonFragment(AVD_COMMON_TYPE)
+        findNavController().navigate(direction)*/
+        findNavController().popBackStack()
     }
 }

@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ggu.avd.data.AvdDrawable
 import com.ggu.avd.databinding.ItemAvdBinding
 
-class AvdListAdapter(
+class DrawableListAdapter(
     private val itemClickedListener: (AvdDrawable) -> Unit
-) : ListAdapter<AvdDrawable, AvdListAdapter.ViewHolder>(AvdDrawable.diffCallback) {
+) : ListAdapter<AvdDrawable, DrawableListAdapter.ViewHolder>(AvdDrawable.diffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
