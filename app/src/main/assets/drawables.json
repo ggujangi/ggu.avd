@@ -1,0 +1,18 @@
+[
+  {
+    "drawableId": "heart-fill",
+    "name": "Heart-Fill",
+    "description": "Heart-Fill",
+    "avdType": 3,
+    "xmlStart": "avd_heart_fill",
+    "xmlEnd": "avd_heart_empty"
+  },
+  {
+    "drawableId": "heart-fill2",
+    "name": "Heart-Fill",
+    "description": "Heart-Fill",
+    "avdType": 2,
+    "xmlStart": "avd_heart_empty",
+    "xmlEnd": "avd_heart_fill"
+  }
+]
