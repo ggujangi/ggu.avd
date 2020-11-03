@@ -11,6 +11,9 @@ interface AvdDao {
     @Query("SELECT * FROM drawables ORDER BY name")
     fun getDrawables() : LiveData<List<AvdDrawable>>
 
+    @Query("SELECT EXISTS( SELECT 1 FROM my_drawables WHERE drawable_id = :drawableId LIMIT 1)")
+    fun isMyDrawable(drawableId:String) : LiveData<Boolean>
+
     @Query("SELECT * FROM drawables WHERE avdType = :type ORDER BY name")
     fun getDrawablesWithType(type:Int) : LiveData<List<AvdDrawable>>
 

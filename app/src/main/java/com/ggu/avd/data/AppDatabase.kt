@@ -2,11 +2,7 @@ package com.ggu.avd.data
 
 import android.content.Context
 import androidx.room.*
-import androidx.sqlite.db.SupportSQLiteDatabase
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
 import com.ggu.avd.utilities.DATABASE_NAME
-import com.ggu.avd.workers.DrawableDatabaseWorker
 
 @Database(entities = [MyDrawable::class, AvdDrawable::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase(){
@@ -24,15 +20,6 @@ abstract class AppDatabase : RoomDatabase(){
 
         private fun buildDatabase(context: Context): AppDatabase {
             return Room.databaseBuilder(context, AppDatabase::class.java, DATABASE_NAME)
-                .addCallback(
-                    object : RoomDatabase.Callback() {
-                        override fun onCreate(db: SupportSQLiteDatabase) {
-                            super.onCreate(db)
-                            val request = OneTimeWorkRequestBuilder<DrawableDatabaseWorker>().build()
-                            WorkManager.getInstance(context).enqueue(request)
-                        }
-                    }
-                )
                 .build()
         }
     }
