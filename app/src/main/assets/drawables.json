@@ -3,7 +3,7 @@
     "drawableId": "heart-fill",
     "name": "Heart-Fill",
     "description": "Heart-Fill",
-    "avdType": 3,
+    "avdType": 0,
     "xmlStart": "avd_heart_fill",
     "xmlEnd": "avd_heart_empty"
   },
@@ -11,8 +11,16 @@
     "drawableId": "heart-fill2",
     "name": "Heart-Fill",
     "description": "Heart-Fill",
-    "avdType": 2,
+    "avdType": 0,
     "xmlStart": "avd_heart_empty",
     "xmlEnd": "avd_heart_fill"
+  },
+  {
+    "drawableId": "smile_sun",
+    "name": "Smile-Sun",
+    "description": "Smile-Sun",
+    "avdType": 0,
+    "xmlStart": "avd_anim_sun",
+    "xmlEnd": "avd_anim_sun"
   }
 ]
