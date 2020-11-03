@@ -3,21 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_my">
-
-    <fragment
-        android:id="@+id/navigation_my"
-        android:name="com.ggu.avd.ui.my.MyFragment"
-        android:label="@string/title_my"
-        tools:layout="@layout/fragment_my" />
+    app:startDestination="@+id/navigation_common">
 
     <fragment
         android:id="@+id/navigation_common"
         android:name="com.ggu.avd.ui.list.ListFragment"
         android:label="@string/title_common"
         tools:layout="@layout/fragment_list">
+
         <argument
             android:name="avdType"
+            android:defaultValue="0"
             app:argType="string" />
     </fragment>
 
@@ -28,6 +24,17 @@
         tools:layout="@layout/fragment_list">
         <argument
             android:name="avdType"
+            android:defaultValue="1"
             app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_my"
+        android:name="com.ggu.avd.ui.my.MyFragment"
+        android:label="@string/title_my"
+        tools:layout="@layout/fragment_my">
+        <action
+            android:id="@+id/action_my_fragment_to_common_fragment"
+            app:destination="@id/navigation_common" />
     </fragment>
 </navigation>

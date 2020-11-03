@@ -1,40 +1,42 @@
 package com.ggu.avd.ui.list
 
+import android.graphics.drawable.AnimatedVectorDrawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.ggu.avd.data.AvdDrawable
 import com.ggu.avd.databinding.ItemAvdBinding
 
-class AvdListAdapter(
-    private val itemClickedListener: (AvdDrawable) -> Unit
-) : ListAdapter<AvdDrawable, AvdListAdapter.ViewHolder>(AvdDrawable.diffCallback) {
+class DrawableListAdapter : ListAdapter<AvdDrawable, DrawableListAdapter.ViewHolder>(AvdDrawable.diffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemAvdBinding.inflate(inflater, parent, false)
-        return ViewHolder(binding, itemClickedListener)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.item = getItem(position)
+        holder.bind(getItem(position))
     }
 
     class ViewHolder(
-        binding: ItemAvdBinding,
-        itemClickedListener: (AvdDrawable) -> Unit
+            private val binding: ItemAvdBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        var item: AvdDrawable? = null
+        var item:AvdDrawable? = null
 
         init {
-            item?.let {
-                binding.data = it
-                binding.root.setOnClickListener { v ->
-                    itemClickedListener(it)
-                }
+            binding.avdIcon.setOnClickListener{
+                val avd:AnimatedVectorDrawable = (it as ImageView).drawable as AnimatedVectorDrawable
+                avd.start()
             }
+        }
+
+        fun bind(item: AvdDrawable) {
+            this.item = item
+            binding.data = item
         }
     }
 }
