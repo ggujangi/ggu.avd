@@ -1,4 +1,4 @@
-package com.ggu.avd.ui.list
+package com.ggu.avd.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,30 +9,30 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.ggu.avd.databinding.FragmentListBinding
+import com.ggu.avd.databinding.FragmentHomeBinding
 import com.ggu.avd.utilities.provideDrawableRepository
 
 
-class ListFragment : Fragment() {
+class HomeFragment : Fragment() {
 
-    private lateinit var viewModel:ListViewModel
+    private lateinit var viewModel:HomeViewModel
 
-    private val args: ListFragmentArgs by navArgs()
+    private val args: HomeFragmentArgs by navArgs()
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentListBinding.inflate(inflater, container, false)
+        val binding = FragmentHomeBinding.inflate(inflater, container, false)
         binding.avdTitle.text = findNavController().currentDestination?.label
 
         context?.let { context->
             viewModel = ViewModelProvider(this, object : ViewModelProvider.Factory {
                 override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                    return provideDrawableRepository(context)?.let { ListViewModel(it) } as T
+                    return provideDrawableRepository(context)?.let { HomeViewModel(it) } as T
                 }
-            }).get(ListViewModel::class.java)
+            }).get(HomeViewModel::class.java)
 
             val listAdapter = DrawableListAdapter()
 

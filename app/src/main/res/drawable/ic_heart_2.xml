@@ -14,12 +14,25 @@ Copyright (C) 2015 The Android Open Source Project
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<animated-vector
+<vector
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:drawable="@drawable/ic_heart_2">
+    android:width="280dp"
+    android:height="280dp"
+    android:viewportWidth="56"
+    android:viewportHeight="56">
 
-    <target
+    <path
+        android:name="empty"
+        android:pathData="@string/heart_empty_path"
+        android:fillColor="@android:color/holo_red_light" />
+
+    <clip-path
         android:name="clip"
-        android:animation="@animator/heart_empty" />
+        android:pathData="@string/heart_clip_hidden" />
 
-</animated-vector>
+    <path
+        android:name="full"
+        android:pathData="@string/heart_full_path"
+        android:fillColor="@android:color/holo_red_light"/>
+
+</vector>

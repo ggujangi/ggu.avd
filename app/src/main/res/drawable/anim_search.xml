@@ -16,5 +16,4 @@
         android:drawable="@drawable/avd_heart_fill"
         android:fromId="@id/state_off"
         android:toId="@id/state_on"/>
-
 </animated-selector>

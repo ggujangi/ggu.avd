@@ -1,4 +1,4 @@
-package com.ggu.avd.ui.list
+package com.ggu.avd.ui.home
 
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package com.ggu.avd.ui.list
+package com.ggu.avd.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,7 +8,7 @@ import com.ggu.avd.data.AvdDrawable
 import com.ggu.avd.data.DrawableRepository
 import com.squareup.inject.assisted.AssistedInject
 
-class ListViewModel internal constructor(
+class HomeViewModel internal constructor(
         drawableRepository: DrawableRepository
 ) : ViewModel() {
 
