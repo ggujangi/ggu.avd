@@ -16,5 +16,6 @@
     <color name="background_intro">#a5dff9</color>
 
     <color name="color_hint">#B3969696</color>
+    <color name="color_background">#F6F6F6</color>
 
 </resources>
