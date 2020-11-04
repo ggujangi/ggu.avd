@@ -22,5 +22,13 @@
     "avdType": 0,
     "xmlStart": "avd_anim_sun",
     "xmlEnd": "avd_anim_sun"
+  },
+  {
+    "drawableId": "search_rotate",
+    "name": "Search-Rotate",
+    "description": "Search-Rotate",
+    "avdType": 0,
+    "xmlStart": "avd_anim_search",
+    "xmlEnd": "avd_anim_search"
   }
 ]
