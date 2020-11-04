@@ -3,14 +3,17 @@
     <style name="TextAppearance.Title" parent="TextAppearance.MaterialComponents.Headline5" >
         <item name="android:textColor">@color/white</item>
         <item name="android:textAlignment">viewStart</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="TextAppearance.Search.Title" parent="TextAppearance.MaterialComponents.Button" >
         <item name="android:textColor">@color/white</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 
     <style name="TextAppearance.Search.Content" parent="TextAppearance.MaterialComponents.Caption" >
         <item name="android:textColor">@color/color_background</item>
         <item name="android:textSize">13dp</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
 </resources>

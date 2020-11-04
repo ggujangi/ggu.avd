@@ -54,27 +54,52 @@
             app:layout_constraintTop_toBottomOf="@id/avd_title"
             tools:text="Smiling Sun is rotating"/>
 
+        <ImageView
+            android:id="@+id/author_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_author"
+            android:layout_marginTop="14dp"
+            android:backgroundTintMode="@color/color_hint"
+            app:layout_constraintStart_toStartOf="@id/avd_description"
+            app:layout_constraintTop_toBottomOf="@id/avd_description"/>
+
         <TextView
             android:id="@+id/avd_author"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
             android:text="@{data.author}"
+            android:textColor="@color/black_content"
+            android:layout_marginStart="4dp"
             style="@style/TextAppearance.Search.Content"
-            app:layout_constraintStart_toStartOf="@id/avd_description"
-            app:layout_constraintTop_toBottomOf="@id/avd_description"
-            tools:text="Smiling Sun is rotating"/>
+            app:layout_constraintStart_toEndOf="@id/author_icon"
+            app:layout_constraintTop_toTopOf="@id/author_icon"
+            app:layout_constraintBottom_toBottomOf="@id/author_icon"
+            tools:text="ggujangi"/>
+
+
+        <ImageView
+            android:id="@+id/date_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@android:drawable/ic_menu_my_calendar"
+            android:layout_marginTop="8dp"
+            android:backgroundTintMode="@color/color_hint"
+            app:layout_constraintStart_toStartOf="@id/author_icon"
+            app:layout_constraintTop_toBottomOf="@id/author_icon"/>
 
         <TextView
             android:id="@+id/avd_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:text="@{data.author}"
+            android:textColor="@color/black_content"
+            android:layout_marginStart="4dp"
             style="@style/TextAppearance.Search.Content"
-            app:layout_constraintStart_toStartOf="@id/avd_author"
-            app:layout_constraintTop_toBottomOf="@id/avd_author"
-            tools:text="2020-11-04 SAT"/>
+            app:layout_constraintStart_toEndOf="@id/date_icon"
+            app:layout_constraintTop_toTopOf="@id/date_icon"
+            app:layout_constraintBottom_toBottomOf="@id/date_icon"
+            tools:text="2020-11-04, SAT"/>
 
         <ImageView
             android:id="@+id/like_btn"
