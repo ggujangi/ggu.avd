@@ -28,17 +28,17 @@ class MyFragment : Fragment() {
                 ViewModelProvider(this).get(MyViewModel::class.java)
 
         val binding = FragmentMyBinding.inflate(inflater, container, false)
-
+        binding.avdTitle.text = findNavController().currentDestination?.label
         binding.hasDrawables = false
 
 
         binding.addBtn.setOnClickListener {
-            navigateToPlantListPage()
+            navigateToDrawableListPage()
         }
         return binding.root
     }
 
-    private fun navigateToPlantListPage() {
+    private fun navigateToDrawableListPage() {
         /*val direction = MyFragmentDirections.actionMyFragmentToCommonFragment(AVD_COMMON_TYPE)
         findNavController().navigate(direction)*/
         findNavController().popBackStack()
