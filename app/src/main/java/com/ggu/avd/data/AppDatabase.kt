@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.*
 import com.ggu.avd.utilities.DATABASE_NAME
 
-@Database(entities = [MyDrawable::class, AvdDrawable::class], version = 1, exportSchema = false)
+@Database(entities = [MyDrawable::class, AvdDrawable::class, SearchKeyword::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase(){
     abstract fun drawableDao() : AvdDao
     abstract fun myDrawableDao() : MyDao
