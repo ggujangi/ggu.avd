@@ -1,13 +1,16 @@
 package com.ggu.avd.ui.my
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.ggu.avd.data.MyDrawable
+import com.ggu.avd.data.MyRepository
+import com.ggu.avd.data.RelationDrawables
 
-class MyViewModel : ViewModel() {
+class MyViewModel internal constructor(
+        myRepository: MyRepository
+) : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is My Fragment"
-    }
-    val text: LiveData<String> = _text
+    val drawables:LiveData<List<RelationDrawables>> = myRepository.getDrawables()
+
+
 }

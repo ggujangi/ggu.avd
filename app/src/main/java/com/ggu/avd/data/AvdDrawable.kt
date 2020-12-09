@@ -12,7 +12,8 @@ data class AvdDrawable(
     val description:String,
     val avdType:Int,
     val xmlStart:String,
-    val xmlEnd:String
+    val xmlEnd:String,
+    val author:String
 ){
     companion object {
         val diffCallback = object : DiffUtil.ItemCallback<AvdDrawable>() {

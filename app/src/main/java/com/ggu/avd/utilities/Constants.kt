@@ -19,8 +19,14 @@ package com.ggu.avd.utilities
 /**
  * Constants used throughout the app.
  */
-const val DATABASE_NAME = "avd-db.db"
-const val DRAWABLE_DATA_FILENAME = "drawables.json"
 
-const val AVD_COMMON_TYPE = "0"
-const val AVD_PLAYER_TYPE = "1"
+const val DATABASE_NAME = "avd-db.db"
+
+const val DRAWABLE_DATA_FILENAME = "drawables.json"
+const val TYPE_DATA_FILENAME = "types.json"
+
+const val KEY_RESULT_KEYWORD = "result_keyword"
+const val KEY_RESULT_DRAWABLE = "result_drawable"
+
+const val AVD_COMMON_TYPE = 0
+const val AVD_PLAYER_TYPE = 1

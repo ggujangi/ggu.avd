@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.Title" parent="TextAppearance.MaterialComponents.Headline5" >
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="TextAppearance.Item.Title" parent="TextAppearance.MaterialComponents.Button" >
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="TextAppearance.Item.Content" parent="TextAppearance.MaterialComponents.Caption" >
+        <item name="android:textColor">@color/blue_dark</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+</resources>

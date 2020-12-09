@@ -5,7 +5,8 @@
     "description": "Heart-Fill",
     "avdType": 0,
     "xmlStart": "avd_heart_fill",
-    "xmlEnd": "avd_heart_empty"
+    "xmlEnd": "avd_heart_empty",
+    "author": "@udacity"
   },
   {
     "drawableId": "heart-fill2",
@@ -13,14 +14,25 @@
     "description": "Heart-Fill",
     "avdType": 0,
     "xmlStart": "avd_heart_empty",
-    "xmlEnd": "avd_heart_fill"
+    "xmlEnd": "avd_heart_fill",
+    "author": "@udacity"
   },
   {
     "drawableId": "smile_sun",
     "name": "Smile-Sun",
-    "description": "Smile-Sun",
+    "description": "Smiling Sun is rotating",
     "avdType": 0,
     "xmlStart": "avd_anim_sun",
-    "xmlEnd": "avd_anim_sun"
+    "xmlEnd": "avd_anim_sun",
+    "author": "@ggujangi"
+  },
+  {
+    "drawableId": "search_rotate",
+    "name": "Search-Rotate",
+    "description": "Search-Rotate",
+    "avdType": 0,
+    "xmlStart": "avd_anim_search",
+    "xmlEnd": "avd_anim_search",
+    "author": "@ggujangi"
   }
 ]

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.ggu.avd.ui.home.HomeViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/avd_title"
+            style="@style/TextAppearance.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Home" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/type_list"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:overScrollMode="never"
+            android:orientation="horizontal"
+            android:clipToPadding="false"
+            android:types="@{viewModel.types}"
+            android:layout_margin="24dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/avd_title"
+            tools:itemCount="8"
+            tools:listitem="@layout/item_avd_type" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/avd_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            android:orientation="vertical"
+            android:clipToPadding="false"
+            android:items="@{viewModel.drawables}"
+            android:layout_marginTop="14dp"
+            android:paddingBottom="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/type_list"
+            tools:itemCount="8"
+            tools:listitem="@layout/item_avd" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

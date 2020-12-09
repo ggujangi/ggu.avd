@@ -1,16 +1,6 @@
 package com.ggu.avd.data
 
 class DrawableRepository constructor(private val drawableDao: AvdDao) {
-    companion object {
-        @Volatile
-        private var instance: DrawableRepository? = null
-
-        fun getInstance(drawableDao: AvdDao): DrawableRepository {
-            return instance ?: synchronized(this) {
-                instance ?: DrawableRepository(drawableDao)
-            }
-        }
-    }
 
     fun getDrawables() = drawableDao.getDrawables()
 
@@ -18,4 +8,5 @@ class DrawableRepository constructor(private val drawableDao: AvdDao) {
 
     fun isMyDrawable(drawableId:String) = drawableDao.isMyDrawable(drawableId)
 
+    fun getTypes() = drawableDao.getTypes()
 }

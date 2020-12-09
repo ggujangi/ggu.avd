@@ -7,13 +7,13 @@ import androidx.room.Query
 import androidx.room.Transaction
 
 @Dao
-interface MyDao {
+interface MyDao {/*
     @Query("SELECT * FROM my_drawables")
-    fun getMyDrawables() : LiveData<List<MyDrawable>>
+    fun getMyDrawables() : LiveData<List<MyDrawable>>*/
 
     @Transaction
     @Query("SELECT * FROM drawables WHERE id IN (SELECT DISTINCT(drawable_id) FROM my_drawables)")
-    fun getMyDrawable() : LiveData<List<RelationDrawables>>
+    fun getMyDrawables() : LiveData<List<RelationDrawables>>
 
     @Insert
     suspend fun insertMyDrawable(drawable:MyDrawable) : Long
