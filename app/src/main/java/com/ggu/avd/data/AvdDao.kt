@@ -17,6 +17,12 @@ interface AvdDao {
     @Query("SELECT * FROM drawables WHERE avdType = :type ORDER BY name")
     fun getDrawablesWithType(type:Int) : LiveData<List<AvdDrawable>>
 
+    @Query("SELECT * FROM types ORDER BY avdType")
+    fun getTypes() : LiveData<List<AvdType>>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(drawables:List<AvdDrawable>)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertTypes(types:List<AvdType>)
 }

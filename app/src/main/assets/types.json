@@ -1,0 +1,22 @@
+[
+  {
+    "type": "All",
+    "avdType": 0
+  },
+  {
+    "type": "Common",
+    "avdType": 1
+  },
+  {
+    "type": "Player",
+    "avdType": 2
+  },
+  {
+    "type": "Navigation Icon",
+    "avdType": 3
+  },
+  {
+    "type": "Weather",
+    "avdType": 4
+  }
+]

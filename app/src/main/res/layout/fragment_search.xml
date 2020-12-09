@@ -8,7 +8,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/avd_title"
+            android:id="@+id/search_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
@@ -24,7 +24,7 @@
                 android:minHeight="37dp"
                 android:layout_margin="24dp"
                 android:background="@drawable/bg_container_search_input"
-                app:layout_constraintTop_toBottomOf="@id/avd_title">
+                app:layout_constraintTop_toBottomOf="@id/search_title">
 
                 <EditText
                     android:id="@+id/search_input"
@@ -52,18 +52,6 @@
                     android:paddingLeft="11dp" />
             </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recommend_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="16dp"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:layout_constraintTop_toBottomOf="@id/container_input"
-            app:spanCount="4"
-            tools:itemCount="4"
-            tools:listitem="@layout/itm_search_recommend_keyword" />
 
         <fragment
             android:id="@+id/nav_host_fragment_search"
@@ -74,7 +62,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recommend_list"
+            app:layout_constraintTop_toBottomOf="@id/container_input"
             app:navGraph="@navigation/search_navigation"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

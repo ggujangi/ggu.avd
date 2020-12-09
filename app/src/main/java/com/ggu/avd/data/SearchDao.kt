@@ -6,9 +6,13 @@ import androidx.room.*
 @Dao
 interface SearchDao {
 
+    /* Select search result list*/
+    @Query("SELECT * FROM drawables WHERE id LIKE :keyword OR description LIKE :keyword OR author LIKE :keyword")
+    fun getSearchResult(keyword:String) : LiveData<List<AvdDrawable>>
+
     /* Insert recent search keyword */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertKeyword()
+    suspend fun insertKeyword(keyword:SearchKeyword)
 
     /* Select recent search keywords order by date */
     @Query("SELECT * FROM keywords ORDER BY insertDate DESC")
@@ -16,9 +20,9 @@ interface SearchDao {
 
     /* Delete keyword */
     @Query("DELETE FROM keywords WHERE keyword = :keyword")
-    fun deleteKeyword(keyword:String)
+    suspend fun deleteKeyword(keyword:String)
 
     /* Delete all keywords */
     @Query("DELETE FROM keywords")
-    fun deleteAllKeywords()
+    suspend fun deleteAllKeywords()
 }

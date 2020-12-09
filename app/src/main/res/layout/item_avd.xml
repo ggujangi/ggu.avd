@@ -12,28 +12,108 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="12dp">
+        android:background="@drawable/bg_container_avd"
+        android:elevation="8dp"
+        android:padding="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="10dp">
 
         <ImageView
             android:id="@+id/avd_icon"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            app:drawableStringResource="@{data.xmlStart}"
-            app:layout_constraintDimensionRatio="H, 1:1"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:padding="8dp"
+            android:background="@drawable/bg_search_result_icon"
+            android:drawableStringResource="@{data.xmlStart}"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:src="@drawable/avd_heart_fill" />
+            tools:src="@drawable/ic_sun"/>
 
         <TextView
-            android:id="@+id/avd_content"
-            android:layout_width="match_parent"
+            android:id="@+id/avd_title"
+            style="@style/TextAppearance.Item.Title"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="8dp"
             android:text="@{data.name}"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-            app:layout_constraintTop_toBottomOf="@id/avd_icon"
-            tools:text="play-pause Button" />
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintStart_toEndOf="@id/avd_icon"
+            app:layout_constraintEnd_toStartOf="@id/like_btn"
+            app:layout_constraintTop_toTopOf="@id/avd_icon"
+            app:layout_constraintBottom_toBottomOf="@id/avd_icon"
+            tools:text="Smile-Sun"/>
+
+        <TextView
+            android:id="@+id/avd_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{data.description}"
+            style="@style/TextAppearance.Item.Content"
+            app:layout_constraintStart_toStartOf="@id/avd_title"
+            app:layout_constraintTop_toBottomOf="@id/avd_title"
+            tools:text="Smiling Sun is rotating"/>
+
+        <ImageView
+            android:id="@+id/author_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_author"
+            android:layout_marginTop="14dp"
+            android:backgroundTintMode="@color/color_hint"
+            app:layout_constraintStart_toStartOf="@id/avd_description"
+            app:layout_constraintTop_toBottomOf="@id/avd_description"/>
+
+        <TextView
+            android:id="@+id/avd_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{data.author}"
+            android:textColor="@color/black_content"
+            android:layout_marginStart="4dp"
+            style="@style/TextAppearance.Item.Content"
+            app:layout_constraintStart_toEndOf="@id/author_icon"
+            app:layout_constraintTop_toTopOf="@id/author_icon"
+            app:layout_constraintBottom_toBottomOf="@id/author_icon"
+            tools:text="ggujangi"/>
+
+
+        <ImageView
+            android:id="@+id/date_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@android:drawable/ic_menu_my_calendar"
+            android:layout_marginTop="8dp"
+            android:backgroundTintMode="@color/color_hint"
+            app:layout_constraintStart_toStartOf="@id/author_icon"
+            app:layout_constraintTop_toBottomOf="@id/author_icon"/>
+
+        <TextView
+            android:id="@+id/avd_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{data.author}"
+            android:textColor="@color/black_content"
+            android:layout_marginStart="4dp"
+            style="@style/TextAppearance.Item.Content"
+            app:layout_constraintStart_toEndOf="@id/date_icon"
+            app:layout_constraintTop_toTopOf="@id/date_icon"
+            app:layout_constraintBottom_toBottomOf="@id/date_icon"
+            tools:text="2020-11-04, SAT"/>
+
+        <ImageView
+            android:id="@+id/like_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_container_avd"
+            android:elevation="4dp"
+            android:src="@drawable/ic_heart"
+            android:padding="12dp"
+            android:layout_marginEnd="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/avd_icon"
+            app:layout_constraintBottom_toBottomOf="@id/avd_icon"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

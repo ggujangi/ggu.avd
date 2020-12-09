@@ -4,13 +4,15 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.ggu.avd.utilities.AVD_COMMON_TYPE
 import java.text.SimpleDateFormat
 import java.util.*
 
 
-@Entity(tableName = "keywords")
-class SearchKeyword(
-        @PrimaryKey @ColumnInfo(name = "keyword") var keyword: String,
+@Entity(tableName = "types")
+class AvdType(
+        @PrimaryKey var type: String,
+        var avdType :Int
 ) {
     var insertDate: String = getCurrentTime()
 
@@ -20,16 +22,17 @@ class SearchKeyword(
         return dateFormat.format(cal.time)
     }
 
-    companion object {
-        val diffCallback = object : DiffUtil.ItemCallback<SearchKeyword>() {
-            override fun areItemsTheSame(
-                    oldItem: SearchKeyword,
-                    newItem: SearchKeyword
-            ): Boolean =
-                    oldItem.keyword == newItem.keyword
 
-            override fun areContentsTheSame(oldItem: SearchKeyword, newItem: SearchKeyword) =
-                    oldItem.keyword == newItem.keyword
+    companion object {
+        val diffCallback = object : DiffUtil.ItemCallback<AvdType>() {
+            override fun areItemsTheSame(
+                    oldItem: AvdType,
+                    newItem: AvdType
+            ): Boolean =
+                    oldItem.type == newItem.type
+
+            override fun areContentsTheSame(oldItem: AvdType, newItem: AvdType) =
+                    oldItem.type == newItem.type && oldItem.avdType == newItem.avdType
         }
     }
 }

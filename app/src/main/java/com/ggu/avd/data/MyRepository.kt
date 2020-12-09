@@ -1,16 +1,7 @@
 package com.ggu.avd.data
 
 class MyRepository constructor(private val myDao : MyDao) {
-    companion object {
-        @Volatile
-        private var instance: MyRepository? = null
-
-        fun getInstance(myDao : MyDao): MyRepository {
-            return instance ?: synchronized(this) {
-                instance ?: MyRepository(myDao)
-            }
-        }
-    }
+    fun getDrawables() = myDao.getMyDrawables()
 
     suspend fun addDrawable(drawableId:String){
         val drawable = MyDrawable(drawableId)
